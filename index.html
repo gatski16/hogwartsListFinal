@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <main>
+    <h1>Hogwarts Student List 1991</h1>
+    <div class="filters">
+      <h3>Filter by house:</h3>
+      <a class="filter-btn" href="#">Griffindor</a>
+      <a class="filter-btn" href="#">Slytherin</a>
+      <a class="filter-btn" href="#">Hufflepuff</a>
+      <a class="filter-btn" href="#">Ravenclaw</a>
+    </div>
+    <div class="table-container">
+      <table>
+        <tr>
+          <th>First Name <i onclick="sortByFirst" class="down"></i></th>
+          <th>Last Name <i onclick="sortByLast" class="down"></i></th>
+          <th>HOUSE <i onclick="sortByHouse" class="down"></i></th>
+        </tr>
+      </table>
+
+      <template>
+        <table>
+          <tr>
+            <td class="firstname">name</td>
+            <td class="lastname">name</td>
+            <td class="house">name</td>
+          </tr>
+        </table>
+      </template>
+      <!-- <table>
+          <tr>
+            <th>NAME</th>
+            <th>HOUSE</th>
+          </tr>
+          <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+          </tr>
+        </table> -->
+    </div>
+  </main>
+  <script type="text/javascript" src="scripts.js"></script>
+</body>
+
+</html>
