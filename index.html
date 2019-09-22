@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <title>Document</title>
 </head>
@@ -14,39 +15,94 @@
     <h1>Hogwarts Student List 1991</h1>
     <div class="filters">
       <h3>Filter by house:</h3>
-      <a class="filter-btn" href="#">Griffindor</a>
-      <a class="filter-btn" href="#">Slytherin</a>
-      <a class="filter-btn" href="#">Hufflepuff</a>
-      <a class="filter-btn" href="#">Ravenclaw</a>
+      <a class="filter-btn Gryffindor" href="#">Gryffindor <span class="countGryffindor"></span></a>
+      <a class="filter-btn Slytherin" href="#">Slytherin <span class="countSlytherin"></span></a>
+      <a class="filter-btn Hufflepuff" href="#">Hufflepuff <span class="countHufflepuff"></span></a>
+      <a class="filter-btn Ravenclaw" href="#">Ravenclaw <span class="countRavenclaw"></span></a>
+      <a class="filter-btn all" href="#">All <span class="countAll"></span></a>
     </div>
+    <section id="modal">
+      <div class="modal-bg">
+        <div id="modal-content">
+          <img class="modal-img" src="" alt="" />
+          <h2 class="modal-name">Firstname</h2>
+          <div class="modal-house"></div>
+          <div class="modal-bloodstatus"></div>
+        </div>
+      </div>
+    </section>
+
     <div class="table-container">
-      <table>
+      <table class="table-heading">
         <tr>
-          <th>First Name <i onclick="sortByFirst" class="down"></i></th>
-          <th>Last Name <i onclick="sortByLast" class="down"></i></th>
-          <th>HOUSE <i onclick="sortByHouse" class="down"></i></th>
+          <th class="fn">First Name <i class="down sortbyfirst"></i></th>
+          <th class="ln">Last Name <i class="down sortbylast"></i></th>
+          <th class="h">House <i class="down sortbyhouse"></i></th>
+          <th class="action-th">Actions</th>
         </tr>
       </table>
+      <div class="scroll-table">
+        <section class="student-container"></section>
+        <template class="main-template">
+          <table class="template-table">
+            <tr>
+              <td class="firstname fn">Harry</td>
+              <td class="lastname ln">Potter</td>
+              <td class="house h">Gryffindor</td>
+              <td class="action">
+                <button class="remove expell-btn" data-action="remove">Expell</button>
+                <button class="inqsquad-btn">InqSquad</button>
+                <button class="prefect-btn">Prefect</button>
+              </td>
+              <!-- <td class="action"><button class="inqsquad-btn">InqSquad</button></td>
+              <td class="action"><button class="inqsquad-btn">Prefect</button></td> -->
+            </tr>
+          </table>
+        </template>
+      </div>
+    </div>
+    <div class="grid">
+      <section class="expelled-container">
+        <h2>Expelled Students <span class="countExpelled"></span></h2>
+        <div class="expelledTextContainer">
+          <p class="dispExp">(No students expelled)</p>
 
-      <template>
-        <table>
-          <tr>
-            <td class="firstname">name</td>
-            <td class="lastname">name</td>
-            <td class="house">name</td>
-          </tr>
-        </table>
-      </template>
-      <!-- <table>
-          <tr>
-            <th>NAME</th>
-            <th>HOUSE</th>
-          </tr>
-          <tr>
-            <td>Peter</td>
-            <td>Griffin</td>
-          </tr>
-        </table> -->
+        </div>
+      </section>
+      <section class="inqSquad-container"
+        style="border-right:1px solid black;border-left:1px solid black; padding: 0 1em">
+        <h2>Inquisitorial Squad</h2>
+        <div class="inqsquadcontainer2">
+          <p>(No students added to the Inquisitorial squad)</p>
+        </div>
+      </section>
+      <section class="prefect-container" style="padding: 0 1em">
+        <h2>Prefects</h2>
+        <div class="housename">
+          <h3>Gryffindor</h3>
+          <div class="GprefectTextContainer">
+            <p>(No prefects assigned)</p>
+          </div>
+        </div>
+        <div class="housename">
+          <h3>Slytherin</h3>
+          <div class="SprefectTextContainer">
+            <p>(No prefects assigned)</p>
+          </div>
+        </div>
+        <div class="housename">
+          <h3>Hufflepuff</h3>
+          <div class="HprefectTextContainer">
+            <p>(No prefects assigned)</p>
+          </div>
+        </div>
+        <div class="housename">
+          <h3>Ravenclaw</h3>
+          <div class="RprefectTextContainer">
+            <p>(No prefects assigned)</p>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
   <script type="text/javascript" src="scripts.js"></script>
