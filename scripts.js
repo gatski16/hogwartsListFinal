@@ -135,7 +135,6 @@ function onlySlytherin(person) {
 }
 
 function filterList() {
-  sortStudents();
   list = activeArray;
 
   if (houseFilter === "all") {
@@ -150,6 +149,8 @@ function filterList() {
     list = activeArray.filter(onlySlytherin);
   }
   displayList(list);
+
+  sortStudents();
 }
 
 // Sorting
@@ -377,8 +378,8 @@ function removeInqSquadButton(list) {
 }
 
 function removeInqSquad(list) {
-  let slectedStudent = this.dataset.name;
-  let selectedStudentIndex = findIndexOfInqSquad(slectedStudent);
+  let selectedStudent = this.dataset.name;
+  let selectedStudentIndex = findIndexOfInqSquad(selectedStudent);
   inqSquad.splice(selectedStudentIndex, 1);
   displayInqList(inqSquad);
 }
