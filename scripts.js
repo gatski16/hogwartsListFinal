@@ -43,10 +43,10 @@ function start() {
 // Fetch JSON data
 
 async function getJson() {
-  let jsonData = await fetch("http://petlatkea.dk/2019/hogwarts/students.json");
+  let jsonData = await fetch("https://petlatkea.dk/2019/hogwarts/students.json");
   jsonStudents = await jsonData.json();
   let bloodData = await fetch(
-    "http://petlatkea.dk/2019/hogwarts/families.json"
+    "https://petlatkea.dk/2019/hogwarts/families.json"
   );
   bloodType = await bloodData.json();
   prepareObjects(jsonStudents);
